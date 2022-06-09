@@ -1,0 +1,13 @@
+.locationMarker {
+  font-size: 2rem;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  background-color: rgb(50, 85, 201);
+  position: relative;
+  color: white;
+}

@@ -1,0 +1,23 @@
+.container__results {
+  width: 250px;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  right: -250px;
+  top: 0;
+  overflow-y: scroll;
+  padding: 0 5px;
+}
+
+.results__list {
+  list-style: none;
+  width: 100%;
+}
+
+.results__item {
+  height: 300px;
+  background-color: rgb(243, 243, 243);
+  border-radius: 10px;
+  margin: 5px 0;
+  padding: 10px;
+}

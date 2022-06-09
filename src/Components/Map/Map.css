@@ -1,0 +1,15 @@
+.container__map {
+  position: relative;
+  width: calc(100vw - 250px);
+  height: calc(100vh - 40px);
+}
+
+.cluster__marker {
+  color: #fff;
+  border-radius: 50%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(50, 85, 201);
+}
