@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/Booking/static/css/main.a78ed965.chunk.css",
+    "main.js": "/Booking/static/js/main.9ec75c48.chunk.js",
+    "main.js.map": "/Booking/static/js/main.9ec75c48.chunk.js.map",
+    "runtime-main.js": "/Booking/static/js/runtime-main.991d7194.js",
+    "runtime-main.js.map": "/Booking/static/js/runtime-main.991d7194.js.map",
+    "static/css/2.ed1298f3.chunk.css": "/Booking/static/css/2.ed1298f3.chunk.css",
+    "static/js/2.dd678a7b.chunk.js": "/Booking/static/js/2.dd678a7b.chunk.js",
+    "static/js/2.dd678a7b.chunk.js.map": "/Booking/static/js/2.dd678a7b.chunk.js.map",
+    "index.html": "/Booking/index.html",
+    "static/css/2.ed1298f3.chunk.css.map": "/Booking/static/css/2.ed1298f3.chunk.css.map",
+    "static/css/main.a78ed965.chunk.css.map": "/Booking/static/css/main.a78ed965.chunk.css.map",
+    "static/js/2.dd678a7b.chunk.js.LICENSE.txt": "/Booking/static/js/2.dd678a7b.chunk.js.LICENSE.txt",
+    "static/media/1.42854f70.jfif": "/Booking/static/media/1.42854f70.jfif",
+    "static/media/2.ca08ea64.jfif": "/Booking/static/media/2.ca08ea64.jfif",
+    "static/media/3.138403bd.jfif": "/Booking/static/media/3.138403bd.jfif",
+    "static/media/4.b438c8e7.jfif": "/Booking/static/media/4.b438c8e7.jfif",
+    "static/media/logo.12f233ac.svg": "/Booking/static/media/logo.12f233ac.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.991d7194.js",
+    "static/css/2.ed1298f3.chunk.css",
+    "static/js/2.dd678a7b.chunk.js",
+    "static/css/main.a78ed965.chunk.css",
+    "static/js/main.9ec75c48.chunk.js"
+  ]
+}
