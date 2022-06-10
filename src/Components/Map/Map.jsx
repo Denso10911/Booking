@@ -56,7 +56,6 @@ const Map = ({ eventData }) => {
     //Set user's browser location as center of map
     getBrowserLocation()
       .then((cueLoc) => {
-        console.log(cueLoc);
         setCenter(cueLoc);
       })
       .catch((defaultLocation) => {
