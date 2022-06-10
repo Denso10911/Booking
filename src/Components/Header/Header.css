@@ -1,9 +1,104 @@
-.header {
-  width: 100vw;
-  background-color: firebrick;
+.wrapper__header {
+  background-color: rgb(50, 85, 201);
+  height: 80px;
+  border-bottom: 5px solid rgb(50, 85, 201);
+  display: flex;
+  justify-content: space-between;
+}
+
+.container__header_l,
+.container__header_r {
+  width: 15%;
+}
+
+.container__header_l {
+  background-color: rgb(50, 85, 201);
+}
+
+.container__header_r {
+  background-color: rgb(44, 53, 58);
+}
+
+.container__header {
+  width: 70%;
+  background-color: rgb(44, 53, 58);
+  color: #8497a2;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__icon {
+  position: absolute;
+  left: -40px;
+  top: 0;
+  z-index: 5;
+}
+.header__icon img {
+  width: 80px;
+  height: 80px;
+}
+
+.header__title {
+  height: 100%;
+  padding-left: 80px;
+  display: flex;
+  align-items: center;
+  font-weight: normal;
+  font-size: 0.8rem;
+}
+
+.header__box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.addOffer {
   color: white;
-  text-align: center;
-  padding: 10px;
-  font-size: 20px;
-  height: 40px;
+  background-color: rgb(226, 174, 62);
+  border-radius: 20px;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.addOffer span {
+  font-size: 2rem;
+}
+
+.addOffer:hover {
+  background-color: rgb(62, 133, 226);
+}
+
+.login {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.login:before {
+  content: "";
+  position: absolute;
+  display: block;
+  right: -15px;
+  top: -10px;
+  width: 1px;
+  height: 45px;
+  background-color: #8497a2;
+}
+
+.language {
+  margin-left: 10px;
+  color: white;
+}
+
+.MuiSelect-outlined {
+  color: white;
+}
+.filled {
+  border: none;
 }

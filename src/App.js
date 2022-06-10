@@ -3,20 +3,18 @@ import { useState, useEffect } from "react";
 import { Map } from "./Components/Map";
 import { Header } from "./Components/Header";
 import { Loader } from "./Components/Loader";
+import { data } from './assets/data/data';
 
 function App() {
   const [loading, setLoading] = useState(false);
   //Event to render
   const [renderEvent, setRenderEvent] = useState([]);
+
   useEffect(() => {
     const fetchEvents = async () => {
       setLoading(true);
-      const res = await fetch(
-        "https://eonet.sci.gsfc.nasa.gov/api/v2.1/events"
-      );
-      //Extract the Array contained in the 'events' field.
-      const { events } = await res.json();
-      setRenderEvent(events);
+      
+      setRenderEvent(data);
       setLoading(false);
     };
     fetchEvents();

@@ -1,5 +1,6 @@
 import React from "react";
 import useSupercluster from "use-supercluster";
+import { OfferCarousel } from "../OfferCarousel";
 import "./Results.css";
 
 const Results = ({ points, bounds, chosenCluster }) => {
@@ -15,18 +16,32 @@ const Results = ({ points, bounds, chosenCluster }) => {
         {chosenCluster
           ? chosenCluster.map((cluster) => {
               return (
-                <li className='results__item' key={cluster.properties.eventKey}>
+                <li className='results__item' key={cluster.properties.offerKey}>
+                  <div className='results__img'>
+                    <OfferCarousel imgs={cluster.properties.offerImg} />
+                  </div>
+                  <div className='results__price'>
+                    {cluster.properties.offerPrice}
+                    <span>грн / доба</span>
+                  </div>
                   <div className='results__title'>
-                    {cluster.properties.eventTitle}
+                    {cluster.properties.offerTitle}
                   </div>
                 </li>
               );
             })
           : clusters.map((cluster) => {
               return (
-                <li className='results__item' key={cluster.properties.eventKey}>
+                <li className='results__item' key={cluster.properties.offerKey}>
+                  <div className='results__img'>
+                    <OfferCarousel imgs={cluster.properties.offerImg} />
+                  </div>
+                  <div className='results__price'>
+                    {cluster.properties.offerPrice}
+                    <span> грн / доба</span>
+                  </div>
                   <div className='results__title'>
-                    {cluster.properties.eventTitle}
+                    {cluster.properties.offerTitle}
                   </div>
                 </li>
               );

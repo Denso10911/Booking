@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./ClusterMarker.css";
 
 const ClusterMarker = ({
@@ -16,6 +16,10 @@ const ClusterMarker = ({
       style={{
         width: `${addSize + changeSize}px`,
         height: `${addSize + changeSize}px`,
+
+        position: "absolute",
+        top: `-${(addSize + changeSize) / 2}px`,
+        left: `-${(addSize + changeSize) / 2}px`,
         backgroundColor: `${
           clusterBG === id ? "rgb(50, 171, 201)" : "rgb(50, 85, 201)"
         }`,

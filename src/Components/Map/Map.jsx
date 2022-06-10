@@ -1,6 +1,6 @@
 import GoogleMapReact from "google-map-react";
 import useSuperCluster from "use-supercluster";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 //Components
 import { Results } from "../Results";
 import { LocationMarker } from "../LocationMarker";
@@ -8,10 +8,12 @@ import { ClusterMarker } from "../ClusterMarker";
 
 //Style
 import "./Map.css";
+import { getBrowserLocation } from "../../assets/geo/geo";
 
-const Map = ({ center, eventData }) => {
+const Map = ({ eventData }) => {
   const mapRef = useRef();
-  const [zoom, setZoom] = useState(1);
+  const [zoom, setZoom] = useState(10);
+  const [center, setCenter] = useState(null);
   const [bounds, setBounds] = useState(null);
   const [chosenCluster, setChosenCluster] = useState(null);
   const [clusterBG, setClusterBG] = useState(null);
@@ -20,9 +22,11 @@ const Map = ({ center, eventData }) => {
     type: "Feature",
     properties: {
       cluster: false,
-      eventKey: event.id,
-      eventTitle: event.title,
-      eventType: event.categories[0].id,
+      offerKey: event.id,
+      offerTitle: event.title,
+      offerType: event.categories[0].id,
+      offerImg: event.img,
+      offerPrice: event.price,
     },
     geometry: {
       type: "Point",
@@ -47,6 +51,18 @@ const Map = ({ center, eventData }) => {
     let result = supercluster.getLeaves(id, limit);
     setChosenCluster(result);
   };
+
+  useEffect(() => {
+    //Set user's browser location as center of map
+    getBrowserLocation()
+      .then((cueLoc) => {
+        console.log(cueLoc);
+        setCenter(cueLoc);
+      })
+      .catch((defaultLocation) => {
+        setCenter(defaultLocation);
+      });
+  }, []);
 
   return (
     <div className='container__map'>
@@ -82,8 +98,8 @@ const Map = ({ center, eventData }) => {
             cluster.properties;
 
           if (isCluster) {
-            let changeSize = Math.round((pointCount / points.length) * 100);
-            let addSize = Math.min(changeSize * 10, 40);
+            let changeSize = Math.round((pointCount * 20) / points.length);
+            let addSize = Math.min(changeSize * 10, 30);
 
             return (
               <ClusterMarker
@@ -102,10 +118,13 @@ const Map = ({ center, eventData }) => {
           } else {
             return (
               <LocationMarker
-                key={cluster.properties.eventKey}
+                key={cluster.properties.offerKey}
                 lat={latitude}
                 lng={longitude}
-                onClick={() => setChosenCluster([cluster])}
+                cluster={cluster}
+                clusterBG={clusterBG}
+                setChosenCluster={setChosenCluster}
+                setClusterBG={setClusterBG}
               />
             );
           }
