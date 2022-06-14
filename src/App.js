@@ -3,18 +3,18 @@ import { useState, useEffect } from "react";
 import { Map } from "./Components/Map";
 import { Header } from "./Components/Header";
 import { Loader } from "./Components/Loader";
-import { data } from './assets/data/data';
+import { data } from "./assets/data/data";
 
 function App() {
   const [loading, setLoading] = useState(false);
   //Event to render
-  const [renderEvent, setRenderEvent] = useState([]);
+  const [renderOffer, setRenderOffer] = useState([]);
 
   useEffect(() => {
     const fetchEvents = async () => {
       setLoading(true);
-      
-      setRenderEvent(data);
+
+      setRenderOffer(data);
       setLoading(false);
     };
     fetchEvents();
@@ -22,8 +22,8 @@ function App() {
 
   return (
     <div>
-      <Header />
-      {!loading ? <Map eventData={renderEvent} /> : <Loader />}
+      <Header offerData={renderOffer} setOfferData={setRenderOffer} />
+      {!loading ? <Map offerData={renderOffer} /> : <Loader />}
     </div>
   );
 }

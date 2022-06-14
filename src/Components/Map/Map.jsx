@@ -10,7 +10,7 @@ import { ClusterMarker } from "../ClusterMarker";
 import "./Map.css";
 import { getBrowserLocation } from "../../assets/geo/geo";
 
-const Map = ({ eventData }) => {
+const Map = ({ offerData }) => {
   const mapRef = useRef();
   const [zoom, setZoom] = useState(10);
   const [center, setCenter] = useState(null);
@@ -18,21 +18,21 @@ const Map = ({ eventData }) => {
   const [chosenCluster, setChosenCluster] = useState(null);
   const [clusterBG, setClusterBG] = useState(null);
   //Set up the geo-features. Do not need them anymore.
-  const points = eventData.map((event) => ({
+  const points = offerData.map((offer) => ({
     type: "Feature",
     properties: {
       cluster: false,
-      offerKey: event.id,
-      offerTitle: event.title,
-      offerType: event.categories[0].id,
-      offerImg: event.img,
-      offerPrice: event.price,
+      offerKey: offer.id,
+      offerTitle: offer.title,
+      offerType: offer.categories[0].id,
+      offerImg: offer.img,
+      offerPrice: offer.price,
     },
     geometry: {
       type: "Point",
       coordinates: [
-        event.geometries[0].coordinates[0],
-        event.geometries[0].coordinates[1],
+        offer.geometries[0].coordinates[0],
+        offer.geometries[0].coordinates[1],
       ],
     },
   }));

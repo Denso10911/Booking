@@ -4,8 +4,9 @@ import Select from "@mui/material/Select";
 import { FiLogIn } from "react-icons/fi";
 import logo from "../../assets/img/logo.svg";
 import "./Header.css";
+import { AddSuggestion } from "../AddSuggestion";
 
-const Header = () => {
+const Header = ({ offerData, setOfferData }) => {
   const [lang, setLang] = useState("UA");
   const [current, setCurrent] = useState("UAH");
 
@@ -30,9 +31,9 @@ const Header = () => {
           </h3>
         </div>
         <div className='header__box'>
-          <button className='addOffer'>
-            Здати в оренду <span>+</span>
-          </button>
+          <div className='addOffer'>
+            <AddSuggestion offerData={offerData} setOfferData={setOfferData} />
+          </div>
           <div className='login'>
             <FiLogIn />
             <span>Увійти</span>
