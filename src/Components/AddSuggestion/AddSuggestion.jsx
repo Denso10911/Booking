@@ -84,7 +84,6 @@ const AddSuggestion = ({ offerData, setOfferData }) => {
           <Address
             address={address}
             setAddress={setAddress}
-            coordinates={coordinates}
             setCoordinates={setCoordinates}
           />
           <Photos

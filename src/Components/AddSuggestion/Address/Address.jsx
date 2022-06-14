@@ -6,7 +6,7 @@ import PlacesAutocomplete, {
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 
-const Address = ({ address, setAddress, coordinates, setCoordinates }) => {
+const Address = ({ address, setAddress, setCoordinates }) => {
   const handleSelect = async (value) => {
     const results = await geocodeByAddress(value);
     const latLng = await getLatLng(results[0]);
@@ -37,13 +37,16 @@ const Address = ({ address, setAddress, coordinates, setCoordinates }) => {
             <div>
               {loading ? <div>...loading</div> : null}
 
-              {suggestions.map((suggestion) => {
+              {suggestions.map((suggestion, index) => {
                 const style = {
                   backgroundColor: suggestion.active ? "#41b6e6" : "#fff",
                 };
 
                 return (
-                  <div {...getSuggestionItemProps(suggestion, { style })}>
+                  <div
+                    {...getSuggestionItemProps(suggestion, { style })}
+                    key={index}
+                  >
                     {suggestion.description}
                   </div>
                 );
