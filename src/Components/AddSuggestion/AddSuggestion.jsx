@@ -9,6 +9,8 @@ import { Title } from "./Title";
 import { Photos } from "./Photos";
 import { Price } from "./Price";
 import { Address } from "./Address";
+import { addDoc } from "firebase/firestore";
+
 const style = {
   position: "absolute",
   top: "50%",
@@ -20,7 +22,7 @@ const style = {
   boxShadow: 24,
   p: 4,
 };
-const AddSuggestion = ({ offerData, setOfferData }) => {
+const AddSuggestion = ({ offerData, setOfferData, offersCollectionRef }) => {
   const [open, setOpen] = React.useState(false);
   const [title, setTitle] = React.useState("");
   const [description, setDescription] = React.useState("");
@@ -41,19 +43,16 @@ const AddSuggestion = ({ offerData, setOfferData }) => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const addNewOffer = () => {
-    setOfferData([
-      ...offerData,
-      {
-        categories: [{ id: categories.id, title: categories.title }],
-        description: description,
-        geometries: [{ coordinates: [coordinates.lng, coordinates.lat] }],
-        id: Date.now(),
-        title: title,
-        img: selectedFile,
-        price: price,
-      },
-    ]);
+  const addNewOffer = async () => {
+    debugger;
+    await addDoc(offersCollectionRef, {
+      categories: [{ id: categories[0].id, title: categories[0].title }],
+      description: description,
+      geometries: [{ coordinates: [coordinates.lng, coordinates.lat] }],
+      title: title,
+      img: selectedFile,
+      price: price,
+    });
     setOpen(false);
   };
 

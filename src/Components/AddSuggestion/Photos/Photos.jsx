@@ -11,11 +11,10 @@ const Input = styled("input")({
 
 const Photos = ({ selectedFile, setSelectedFile }) => {
   const handleCapture = (event) => {
-    if (event.target.files.length > 1) {
-      let photosArr = [];
-      for (let i = 0; i < event.target.files.length; i++) {
-        photosArr.push(URL.createObjectURL(event.target.files[i]));
-      }
+    let photosArr = [];
+    for (let i = 0; i < event.target.files.length; i++) {
+      photosArr.push(URL.createObjectURL(event.target.files[i]));
+
       setSelectedFile(photosArr);
     }
   };

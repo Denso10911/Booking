@@ -6,7 +6,7 @@ import logo from "../../assets/img/logo.svg";
 import "./Header.css";
 import { AddSuggestion } from "../AddSuggestion";
 
-const Header = ({ offerData, setOfferData }) => {
+const Header = ({ offerData, setOfferData, offersCollectionRef }) => {
   const [lang, setLang] = useState("UA");
   const [current, setCurrent] = useState("UAH");
 
@@ -32,7 +32,11 @@ const Header = ({ offerData, setOfferData }) => {
         </div>
         <div className='header__box'>
           <div className='addOffer'>
-            <AddSuggestion offerData={offerData} setOfferData={setOfferData} />
+            <AddSuggestion
+              offerData={offerData}
+              setOfferData={setOfferData}
+              offersCollectionRef={offersCollectionRef}
+            />
           </div>
           <div className='login'>
             <FiLogIn />
