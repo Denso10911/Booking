@@ -1,28 +1,24 @@
 {
   "files": {
     "main.css": "/Booking/static/css/main.a78ed965.chunk.css",
-    "main.js": "/Booking/static/js/main.b6f3e9f9.chunk.js",
-    "main.js.map": "/Booking/static/js/main.b6f3e9f9.chunk.js.map",
+    "main.js": "/Booking/static/js/main.ff945fad.chunk.js",
+    "main.js.map": "/Booking/static/js/main.ff945fad.chunk.js.map",
     "runtime-main.js": "/Booking/static/js/runtime-main.991d7194.js",
     "runtime-main.js.map": "/Booking/static/js/runtime-main.991d7194.js.map",
     "static/css/2.ed1298f3.chunk.css": "/Booking/static/css/2.ed1298f3.chunk.css",
-    "static/js/2.561cd3f7.chunk.js": "/Booking/static/js/2.561cd3f7.chunk.js",
-    "static/js/2.561cd3f7.chunk.js.map": "/Booking/static/js/2.561cd3f7.chunk.js.map",
+    "static/js/2.5ddfd53e.chunk.js": "/Booking/static/js/2.5ddfd53e.chunk.js",
+    "static/js/2.5ddfd53e.chunk.js.map": "/Booking/static/js/2.5ddfd53e.chunk.js.map",
     "index.html": "/Booking/index.html",
     "static/css/2.ed1298f3.chunk.css.map": "/Booking/static/css/2.ed1298f3.chunk.css.map",
     "static/css/main.a78ed965.chunk.css.map": "/Booking/static/css/main.a78ed965.chunk.css.map",
-    "static/js/2.561cd3f7.chunk.js.LICENSE.txt": "/Booking/static/js/2.561cd3f7.chunk.js.LICENSE.txt",
-    "static/media/1.42854f70.jfif": "/Booking/static/media/1.42854f70.jfif",
-    "static/media/2.ca08ea64.jfif": "/Booking/static/media/2.ca08ea64.jfif",
-    "static/media/3.138403bd.jfif": "/Booking/static/media/3.138403bd.jfif",
-    "static/media/4.b438c8e7.jfif": "/Booking/static/media/4.b438c8e7.jfif",
+    "static/js/2.5ddfd53e.chunk.js.LICENSE.txt": "/Booking/static/js/2.5ddfd53e.chunk.js.LICENSE.txt",
     "static/media/logo.12f233ac.svg": "/Booking/static/media/logo.12f233ac.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.991d7194.js",
     "static/css/2.ed1298f3.chunk.css",
-    "static/js/2.561cd3f7.chunk.js",
+    "static/js/2.5ddfd53e.chunk.js",
     "static/css/main.a78ed965.chunk.css",
-    "static/js/main.b6f3e9f9.chunk.js"
+    "static/js/main.ff945fad.chunk.js"
   ]
 }
