@@ -9,6 +9,8 @@ import { Title } from "./Title";
 import { Photos } from "./Photos";
 import { Price } from "./Price";
 import { Address } from "./Address";
+import { storage } from "../../firebase.config";
+import { ref, uploadBytes } from "firebase/storage";
 import { addDoc } from "firebase/firestore";
 
 const style = {
@@ -22,7 +24,7 @@ const style = {
   boxShadow: 24,
   p: 4,
 };
-const AddSuggestion = ({ offerData, setOfferData, offersCollectionRef }) => {
+const AddSuggestion = ({ offersCollectionRef, setLoading }) => {
   const [open, setOpen] = React.useState(false);
   const [title, setTitle] = React.useState("");
   const [description, setDescription] = React.useState("");
@@ -43,17 +45,39 @@ const AddSuggestion = ({ offerData, setOfferData, offersCollectionRef }) => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  const uploadImage = async (selectedFile, offer) => {
+    if (selectedFile.length === 0) return;
+    selectedFile.forEach((el) => {
+      const imageRef = ref(storage, `${offer}/${el.name}`);
+      uploadBytes(imageRef, el);
+    });
+  };
+
   const addNewOffer = async () => {
-    debugger;
+    setLoading(true);
+    const offer = Date.now();
+    await uploadImage(selectedFile, offer);
     await addDoc(offersCollectionRef, {
+      offer: offer,
       categories: [{ id: categories[0].id, title: categories[0].title }],
       description: description,
       geometries: [{ coordinates: [coordinates.lng, coordinates.lat] }],
       title: title,
-      img: selectedFile,
       price: price,
     });
+    setLoading(false);
     setOpen(false);
+    setTitle("");
+    setDescription("");
+    setSelectedFile([]);
+    setPrice(0);
+    setСategories([
+      {
+        id: 1,
+        title: "Flat",
+      },
+    ]);
+    setAddress("");
   };
 
   return (

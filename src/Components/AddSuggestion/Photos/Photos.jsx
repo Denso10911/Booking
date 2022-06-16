@@ -13,7 +13,7 @@ const Photos = ({ selectedFile, setSelectedFile }) => {
   const handleCapture = (event) => {
     let photosArr = [];
     for (let i = 0; i < event.target.files.length; i++) {
-      photosArr.push(URL.createObjectURL(event.target.files[i]));
+      photosArr.push(event.target.files[i]);
 
       setSelectedFile(photosArr);
     }
@@ -41,7 +41,7 @@ const Photos = ({ selectedFile, setSelectedFile }) => {
           {selectedFile.map((el, index) => {
             return (
               <ImageListItem key={index}>
-                <img src={el} alt='' />
+                <img src={URL.createObjectURL(el)} alt='' />
               </ImageListItem>
             );
           })}

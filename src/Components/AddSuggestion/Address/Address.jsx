@@ -6,7 +6,7 @@ import PlacesAutocomplete, {
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 
-const Address = ({ address, setAddress, setCoordinates }) => {
+const Address = React.memo(({ address, setAddress, setCoordinates }) => {
   const handleSelect = async (value) => {
     const results = await geocodeByAddress(value);
     const latLng = await getLatLng(results[0]);
@@ -57,6 +57,6 @@ const Address = ({ address, setAddress, setCoordinates }) => {
       </PlacesAutocomplete>
     </Box>
   );
-};
+});
 
 export { Address };

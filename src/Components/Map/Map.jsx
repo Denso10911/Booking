@@ -25,7 +25,7 @@ const Map = ({ offerData }) => {
       offerKey: offer.id,
       offerTitle: offer.title,
       offerType: offer.categories[0].id,
-      offerImg: offer.img,
+      offerImg: offer.offer,
       offerPrice: offer.price,
     },
     geometry: {

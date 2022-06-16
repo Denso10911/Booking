@@ -1,5 +1,6 @@
 import React from "react";
 import useSupercluster from "use-supercluster";
+
 import { OfferCarousel } from "../OfferCarousel";
 import "./Results.css";
 

@@ -12,6 +12,7 @@ function App() {
   //offer to render
   const [renderOffer, setRenderOffer] = useState([]);
   const offersCollectionRef = collection(db, "offers");
+
   useEffect(() => {
     const fetchEvents = async () => {
       setLoading(true);
@@ -23,13 +24,12 @@ function App() {
       setLoading(false);
     };
     fetchEvents();
-  }, [offersCollectionRef]);
+  }, [loading]);
   return (
     <div>
       <Header
-        offerData={renderOffer}
-        setOfferData={setRenderOffer}
         offersCollectionRef={offersCollectionRef}
+        setLoading={setLoading}
       />
       {!loading ? <Map offerData={renderOffer} /> : <Loader />}
     </div>

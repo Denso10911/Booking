@@ -2,7 +2,7 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 
-const Price = ({ price, setPrice }) => {
+const Price = React.memo(({ price, setPrice }) => {
   const handleChange = (event) => {
     if (event.target.value >= 0) {
       setPrice(event.target.value);
@@ -23,6 +23,6 @@ const Price = ({ price, setPrice }) => {
       />
     </Box>
   );
-};
+});
 
 export { Price };

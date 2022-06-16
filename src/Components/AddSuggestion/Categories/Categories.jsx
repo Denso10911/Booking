@@ -5,7 +5,7 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 
-const Categories = ({ categories, setСategories }) => {
+const Categories = React.memo(({ categories, setСategories }) => {
   const handleChange = (event) => {
     switch (event.target.value) {
       case "Flat":
@@ -54,6 +54,6 @@ const Categories = ({ categories, setСategories }) => {
       </FormControl>
     </Box>
   );
-};
+});
 
 export { Categories };

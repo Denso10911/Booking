@@ -2,7 +2,7 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 
-const Title = ({ title, setTitle }) => {
+const Title = React.memo(({ title, setTitle }) => {
   const handleChange = (event) => {
     setTitle(event.target.value);
   };
@@ -19,6 +19,6 @@ const Title = ({ title, setTitle }) => {
       />
     </Box>
   );
-};
+});
 
 export { Title };

@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "@firebase/firestore";
-
+import { getStorage } from "firebase/storage";
 const firebaseConfig = {
   apiKey: "AIzaSyDQsP0O4Rf31ES-3SV3pZ-DLl_CuCSiPTg",
   authDomain: "booking-352615.firebaseapp.com",
@@ -11,4 +11,6 @@ const firebaseConfig = {
   measurementId: "G-DRHVJNDB93",
 };
 const app = initializeApp(firebaseConfig);
+
+export const storage = getStorage(app);
 export const db = getFirestore(app);
